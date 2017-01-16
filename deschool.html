@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMTHMI</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <!-- Aframe.io master JS inladen -->
+    <script src="dist/aframe-master.js"></script>
+  </head>
+  <body>
+    <!-- Hieronder staat een scene -->
+    <a-scene>
+      <!-- Hieronder staan de voorgedefinieerde attributen-->
+      <a-assets>
+        <!--Achtergrond video (1) voor de school-->
+        <video id="video1" src="movies/fysio.mp4"
+               autoplay loop crossorigin></video>
+      </a-assets>
+      <!--Hieronder staat de camera-->
+      <a-camera>
+        <a-cursor>
+
+        </a-cursor>
+      </a-camera>
+
+      <!--Hieronder worden ingeladen attributen geselecteerd-->
+      <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
+
+      <!--Insert doos om op te klikken-->
+      <a-box position="20 5 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+
+    </a-scene>
+    <!-- Einde van de scene -->
+  </body>
+</html>
+<script type="text/javascript">
+document.querySelector('#cube').addEventListener('click', function () {
+  this.setAttribute('material', 'color', 'red');
+  console.log('I was clicked!');
+});
+</script>

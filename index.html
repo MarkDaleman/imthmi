@@ -52,3 +52,10 @@
     <!-- Einde van de scene -->
   </body>
 </html>
+<script type="text/javascript">
+document.querySelector('.box1').addEventListener('click', function () {
+  this.setAttribute('material', 'color', 'red');
+  console.log('I was clicked!');
+  this.onclick(window.location.href = "https://www.google.nl")
+});
+</script>
