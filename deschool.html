@@ -27,18 +27,15 @@
       <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
 
       <!--Insert doos om op te klikken-->
-      <a-box class="box1" position="20 5 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" >
-      <a-entity bmfont-text="text: Hello World;"></a-entity>
-    </a-box>
+      <a-box position="20 5 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
 
     </a-scene>
     <!-- Einde van de scene -->
   </body>
 </html>
 <script type="text/javascript">
-document.querySelector('.box1').addEventListener('click', function () {
+document.querySelector('#cube').addEventListener('click', function () {
   this.setAttribute('material', 'color', 'red');
   console.log('I was clicked!');
-  this.onclick(window.location.href = "https://www.google.nl")
 });
 </script>
