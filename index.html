@@ -6,6 +6,7 @@
     <meta name="description" content="Hello, World! • A-Frame">
     <!-- Aframe.io master JS inladen -->
     <script src="dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
   </head>
   <body>
     <!-- Hieronder staat een scene -->
@@ -26,8 +27,26 @@
       <!--Hieronder worden ingeladen attributen geselecteerd-->
       <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
 
-      <!--Insert doos om op te klikken-->
-      <a-box position="20 5 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!--Doos voor school (noord)-->
+      <a-box id="boxNoord" position="20 0 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!--text voor doos noord-->
+      <a-entity id="textNoord" bmfont-text="text: Volg Kevin" position="20 0 -5" rotation="0 -90 0" scale="10 10 10"></a-entity>
+
+      <!--Doos voor fietsen (oost)-->
+      <a-box id="boxOost" position="0 0 -20" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!--text voor doos oost-->
+      <a-entity id="textOost" bmfont-text="text: Volg Michiel" position="-5 0 -20" rotation="0 0 0" scale="10 10 10"></a-entity>
+
+      <!--Doos voor uitgang (zuid)-->
+      <a-box id="boxZuid" position="0 0 20" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!--text voor doos zuid-->
+      <a-entity id="textZuid" bmfont-text="text: Volg Mark" position="5 0 20" rotation="0 180 0" scale="10 10 10"></a-entity>
+
+      <!--Doos voor Zgebouw (west)-->
+      <a-box id="boxWest" position="-20 0 0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!--text voor doos west-->
+      <a-entity id="boxWest" bmfont-text="text: Volg Merijn" position="-20 0 5" rotation="0 90 0" scale="10 10 10"></a-entity>
+
 
     </a-scene>
     <!-- Einde van de scene -->
