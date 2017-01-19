@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17ad0484-3837-4396-9970-5933445e7605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="imthmi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +26,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="405">
               <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding />
             </state>
@@ -203,12 +203,12 @@
       <option name="presentableId" value="Default" />
       <updated>1484561645456</updated>
       <workItem from="1484561647386" duration="5352000" />
-      <workItem from="1484816737688" duration="8525000" />
+      <workItem from="1484816737688" duration="9137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13877000" />
+    <option name="totallyTimeSpent" value="14489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="12" width="1253" height="777" extended-state="0" />
@@ -259,7 +259,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="405">
           <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding />
         </state>
