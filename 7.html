@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMTHMI</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <!-- Aframe.io master JS inladen -->
+    <script src="dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+  </head>
+  <body>
+    <!-- Hieronder staat een scene -->
+    <a-scene>
+      <!-- Hieronder staan de voorgedefinieerde attributen-->
+      <a-assets>
+        <!--Achtergrond video (7) bij de lerarenportretten-->
+        <video id="video7" src="movies/video7.mp4"
+               autoplay loop crossorigin></video>
+      </a-assets>
+      <!--Hieronder staat de camera-->
+      <a-camera>
+        <a-cursor>
+
+        </a-cursor>
+      </a-camera>
+
+      <!--Hieronder worden ingeladen attributen geselecteerd-->
+      <a-videosphere src="#video7" rotation="0 90 0"></a-videosphere>
+
+      <!--Doos voor Remco Meisner-->
+      <a-box id="remco" position="-4 1.5 -20" rotation="0 -90 0" depth="2" height="2.5" width="0" color="green" opacity="0.3" onclick="test" geometry="mergeTo:null"></a-box>
+		
+	  <!--Doos voor Fred van Krimpen-->
+      <a-box id="fred" position="0.9 6.4 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.3" geometry="mergeTo:null" ></a-box>	
+	  
+	  <!--Doos voor Vincent Bakker-->
+      <a-box id="vincent" position="-6.2 9 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.3" geometry="mergeTo:null" ></a-box>
+	  
+	  <!--Doos voor Patrick Pijnenburg-->
+      <a-box id="patrick" position="5.8 11 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.3" geometry="mergeTo:null" ></a-box>
+	  
+	  <!--Paneel waarop informatie verschijnt-->
+	  <a-box id="text_panel" position="-22 6 -20" rotation = "0 -90 0" depth="12.5" height="15" width="0" opacity="0" geometry="mergeTo:null" ></a-box>
+	  
+	  <!--Text die verschijnt-->
+	  <a-entity id="teacher_text" bmfont-text="width: 450;" position="-27 0 -19.9" rotation="0 0 0" scale="5 5 5"></a-entity>
+	  
+    </a-scene>
+    <!-- Einde van de scene -->
+  </body>
+</html>
+
+<script type="text/javascript">
+	var text = document.getElementById("teacher_text");
+	var panel_class = document.querySelectorAll('#remco, #fred, #vincent, #patrick');
+	for(var i = 0; i < panel_class.length; i++) {
+		panel_class[i].addEventListener('click', function () {
+			document.getElementById("text_panel").setAttribute('material', 'opacity', '1');	  
+			text.setAttribute('bmfont-text', 'opacity', '1');
+			
+			if (document.getElementById("remco") == this) {
+				text.setAttribute('bmfont-text', 'text', 'Remco is een van de docenten van de specialisatie Business Data Management. Veel van de vakken die hij geeft zijn gefocust op management, en weet dit altijd met een hoop humor uit te leggen. Mocht je van droge humor houden, dan is hij een van de leukere leraren die er rondloopt!');
+				console.log("Remco!")
+			} else if (document.getElementById("fred") == this) {
+				text.setAttribute('bmfont-text', 'text', 'Fred is de onderwijsassistent van de specialisatie Mediatechnologie. Hij heeft verstand van allerlei zaken zoals hard- en software. Mocht je dus elektronische apparatuur of advies hierover nodig hebben, dan weet hij je vast te helpen!');
+				console.log("Fred!")
+			} else if (document.getElementById("vincent") == this) {
+				text.setAttribute('bmfont-text', 'text', 'Vincent is de opleidingsmanager van de studie Informatica. Hij was oorspronkelijk de specialisatie coördinator van de specialisatie Mediatechnologie. Onderhand regelt hij de invulling van de hele studie. Mocht je dus algemene vragen over de opleiding hebben kan hij je verder helpen!');
+				console.log("Vincent!")
+			} else if (document.getElementById("patrick") == this) {
+				text.setAttribute('bmfont-text', 'text', 'Patrick is de directeur van het cluster Techniek. Met hem zul je niet veel te maken krijgen, omdat hij als directeur weinig in contact staat met studenten. Mocht je hem echter tegenkomen en een gesprek willen aangaan, dan staat hij hier altijd voor open!');
+				console.log("Patrick!")
+			}
+			
+		});
+	}
+</script>
