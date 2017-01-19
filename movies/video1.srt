@@ -1,0 +1,29 @@
+1
+00:00:01,439 --> 00:00:02,439
+Merijn: Welkom bij de hogeschool Leiden.
+
+2
+00:00:02,439 --> 00:00:05,230
+Als je mij volgt dan ga je naar het Z-gebouw.
+
+3
+00:00:05,230 --> 00:00:06,230
+Kevin: Hey.
+
+4
+00:00:06,230 --> 00:00:09,504
+Als je op mij klikt dan neem ik je mee naar
+de school en laat ik je de meest belangrijke
+
+5
+00:00:09,504 --> 00:00:10,004
+punten zien.
+
+6
+00:00:11,840 --> 00:00:15,300
+Michiel: Als je op mij klikt lopen we samen naar de achterkant van het gebouw om de rest van het gebouw te bekijken.
+
+7
+00:00:16,300 --> 00:00:19,980
+Mark: Als je op mij klikt loop ik samen met je mee terug naar Leiden Centraal.
+
