@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IMTHMI</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <!-- Aframe.io master JS inladen -->
+    <script src="dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+</head>
+
+<body>
+    <!-- Hieronder staat een scene -->
+    <a-scene>
+        <!-- Hieronder staan de voorgedefinieerde attributen-->
+        <a-assets>
+            <!--Achtergrond video (6) voor de school-->
+            <video id="video1" src="movies/video6.mp4" autoplay loop crossorigin></video>
+        </a-assets>
+        <!--Hieronder staat de camera-->
+        <a-camera>
+          <!-- Hieronder zorgen wij er voor dat je met de cursor elementen kan selecteren -->
+          <!-- LET OP -->
+          <!-- Het element moet niet dichterbij zijn geplaatst dan de ring, anders gaat de ring er voor langs en werkt het niet -->
+            <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500" position="0 0 -15" geometry="primitive: ring" material="color: white; shader: flat">
+                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+                <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+            </a-entity>
+        </a-camera>
+
+        <!--Hieronder worden ingeladen attributen geselecteerd-->
+        <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
+
+        <!--Box voor naar Rechts-->
+        <a-box id="bRight" position="15 2 -7" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
+        <!--text for Box Rechts-->
+        <a-entity id="tRight" bmfont-text="text: Volg Kevin" position="12 -0.5 -10" rotation="0 -60 0" scale="10 10 10"></a-entity>
+
+        <!--Box voor naar beneden (zuid)-->
+        <a-box id="bDown" position="11 -4 17" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
+        <!--text for Box zuid-->
+        <a-entity id="tDown" bmfont-text="text: Volg Mark" position="13 -6 14" rotation="0 212 0" scale="10 10 10"></a-entity>
+
+        <!--Box voor Links (west)-->
+        <a-box id="bLeft" position="-17 1.5 5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
+        <!--text for Box west-->
+        <a-entity id="tLeft" bmfont-text="text: Volg Merijn" position="-13 0 8" rotation="0 107 0" scale="10 10 10"></a-entity>
+
+    </a-scene>
+    <!-- Einde van de scene -->
+</body>
+
+</html>
+<script type="text/javascript">
+    // We selecteren het ID boxUitgang
+    // Van dit element willen wij het Attribuut material veranderen, en dan met name color waarde
+    // De kleur moet rood worden, dus pak je eerst material vast, daarna color en daarna de gewenste kleur
+    // Vervolgens hetzelfde bij de Uitgangtext; aanroepen om de kleur van de text te veranderen
+    document.querySelector('#bRight').addEventListener('click', function() {
+        this.setAttribute('material', 'color', 'red');
+    });
+    document.querySelector('#bLeft').addEventListener('click', function() {
+        this.setAttribute('material', 'color', 'green');
+    });
+    document.querySelector('#bDown').addEventListener('click', function() {
+        this.setAttribute('material', 'color', 'purple');
+    });
+</script>
