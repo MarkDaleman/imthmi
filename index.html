@@ -8,7 +8,7 @@
     <script src="dist/aframe-master.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
     <script src="https://rawgit.com/ngokevin/aframe-text-component/master/dist/aframe-text-component.min.js"></script>
-
+    <script src="js/jquery-3.1.1.min.js"></script>
     <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
 
   </head>
@@ -30,7 +30,20 @@
       </a-camera>
 
       <!--Hieronder worden ingeladen attributen geselecteerd-->
-      <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
+      <a-videosphere id="video2" src="#video1" rotation="0 180 0"></a-videosphere>
+
+      <!--Scripts voor pauze-->
+      <script>
+        $( document ).ready(function(){
+
+          document.querySelector("#video1").addEventListener("timeupdate", function(){
+            console.log($('#video1')[0].currentTime);
+            if($('#video1')[0].currentTime >= 21 ) {
+              $('#video1')[0].pause();
+            }
+          });
+        });
+      </script>
 
       <!--Doos voor school (noord)-->
       <a-box id="boxNoord" position="35 0 0" scale="1 15 10"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
