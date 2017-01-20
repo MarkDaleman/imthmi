@@ -22,11 +22,14 @@
                autoplay loop crossorigin></video>
       </a-assets>
 
-      <!--Hieronder staat de camera-->
       <a-camera>
-        <a-cursor>
-
-        </a-cursor>
+        <!-- Hieronder zorgen wij er voor dat je met de cursor elementen kan selecteren -->
+        <!-- LET OP -->
+        <!-- Het element moet niet dichterbij zijn geplaatst dan de ring, anders gaat de ring er voor langs en werkt het niet -->
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500" position="0 0 -15" geometry="primitive: ring" material="color: white; shader: flat">
+          <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+          <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+        </a-entity>
       </a-camera>
 
       <!--Hieronder worden ingeladen attributen geselecteerd-->
@@ -49,22 +52,22 @@
       <a-box id="boxNoord" position="35 0 0" scale="1 15 10"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
 
       <!--text voor doos noord-->
-      <a-entity id="textNoord" bmfont-text="text: Volg Mark" position="37 -10 -3" rotation="0 -90 0" scale="10 10 10"></a-entity>
+      <a-entity id="textNoord" bmfont-text="text: Leiden Centraal" position="37 -10 -3" rotation="0 -90 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor fietsen (oost)-->
       <a-box id="boxOost" position="0 0 -23" scale="10 15 1"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
       <!--text voor doos oost-->
-      <a-entity id="textOost" bmfont-text="text: Volg Michiel" position="-5 -10 -25" rotation="0 0 0" scale="10 10 10"></a-entity>
+      <a-entity id="textOost" bmfont-text="text: Achterkant school" position="-5 -10 -25" rotation="0 0 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor uitgang (zuid)-->
       <a-box id="boxZuid" position="0 0 20" scale="10 15 1"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
       <!--text voor doos zuid-->
-      <a-entity id="textZuid" bmfont-text="text: Volg Merijn" position="5 -10 20" rotation="0 180 0" scale="10 10 10"></a-entity>
+      <a-entity id="textZuid" bmfont-text="text: Z-Gebouw" position="5 -10 20" rotation="0 180 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor Zgebouw (west)-->
       <a-box id="boxWest" position="-20 0 0" scale="1 15 10" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
       <!--text voor doos west-->
-      <a-entity id="textWest" material="color:white" bmfont-text="text: Volg Kevin" position="-20 -10 5" rotation="0 90 0" scale="10 10 10"></a-entity>
+      <a-entity id="textWest" material="color:white" bmfont-text="text: Naar binnen" position="-20 -10 5" rotation="0 90 0" scale="10 10 10"></a-entity>
 
     </a-scene>
     <!-- Einde van de scene -->
