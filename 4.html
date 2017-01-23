@@ -15,7 +15,7 @@
       <a-assets>
         <!--Achtergrond video (1) voor de school-->
         <video id="video4" src="movies/video4.mp4"
-               autoplay loop crossorigin></video>
+               loop crossorigin></video>
       </a-assets>
       <!--Hieronder staat de camera-->
       <a-camera>
@@ -74,14 +74,16 @@
         position="-16.8 -0.57 6" rotation="0 110 0" scale="5 5 5"></a-entity>
 
 
-
+		<a-box id="boxNaarBoven" position="-30 8 20" scale="0.1 7 7" rotation="0 50 0" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+		
+		<a-entity id="textNaarBoven" bmfont-text="width: 450; text: Naar boven" position="-23 11 20" rotation="0 135 0" scale="8 8 8"></a-entity>
 
 
       <!-- Box naar de Hal -->
-      <a-box id="boxTrap" position="39 7 -3" scale="0.1 10 14" rotation="0 0" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxHal" position="39 7 -3" scale="0.1 10 14" rotation="0 0" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
 
 
-
+		<a-entity id="hal_text" bmfont-text="width: 450; text: Terug naar de hal" position="28 0 -9" rotation="0 -90 0" scale="8 8 8"></a-entity>
 
 
     </a-scene>
@@ -90,6 +92,16 @@
 </html>
 
 <script type="text/javascript">
+	var naar3 = document.getElementById('boxHal');
+	var naar6 = document.getElementById('boxNaarBoven');
+	
+	naar3.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/3.html';
+	});
+	
+	naar6.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/6.html';
+	});
 
 document.querySelector('#boxLift').addEventListener('click', function () {
   var text = document.getElementById("textLift");

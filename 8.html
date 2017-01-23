@@ -16,7 +16,7 @@
         <!-- Hieronder staan de voorgedefinieerde attributen-->
         <a-assets>
             <!--Achtergrond video (8) voor de school-->
-            <video id="video1" src="movies/video8.mp4" autoplay loop crossorigin></video>
+            <video id="video1" src="movies/video8.mp4" loop crossorigin></video>
         </a-assets>
         <!--Hieronder staat de camera-->
         <a-camera>
@@ -34,7 +34,7 @@
         <!--Box voor de uitgang deur-->
         <a-box id="boxUitgang" position="13.6 2 16" rotation="0 -50 0" scale="3 3 3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
         <!--Text voor onder de uitgang box-->
-        <a-entity id="UitgangText" visible="false" bmfont-text="color: black; text: Uitgang;" position="17 -1.2 15" rotation="-0.66 -140 0" scale="10 10 10"></a-entity>
+        <a-entity id="UitgangText" bmfont-text="color: black; text: Terug naar de trap;" position="25 -2 15" rotation="-0.66 -140 0" scale="10 10 10"></a-entity>
 
     </a-scene>
     <!-- Einde van de scene -->
@@ -42,6 +42,12 @@
 
 </html>
 <script type="text/javascript">
+	var naar6 = document.getElementById("boxUitgang");
+	
+	naar6.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/6.html';
+	});
+	
     var counter = 0
     // We selecteren het ID boxUitgang
     // Van dit element willen wij het Attribuut material veranderen, en dan met name color waarde
