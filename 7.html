@@ -7,6 +7,7 @@
     <!-- Aframe.io master JS inladen -->
     <script src="dist/aframe-master.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="test.css">
   </head>
   <body>
     <!-- Hieronder staat een scene -->
@@ -15,7 +16,7 @@
       <a-assets>
         <!--Achtergrond video (7) bij de lerarenportretten-->
         <video id="video7" src="movies/video7.mp4"
-               autoplay loop crossorigin></video>
+               loop crossorigin></video>
       </a-assets>
       <!--Hieronder staat de camera-->
       <a-camera>
@@ -28,7 +29,7 @@
       <a-videosphere src="#video7" rotation="0 90 0"></a-videosphere>
 
       <!--Doos voor Remco Meisner-->
-      <a-box id="remco" position="-4 1.5 -20" rotation="0 -90 0" depth="2" height="2.5" width="0" color="green" opacity="0.3" onclick="test" geometry="mergeTo:null"></a-box>
+      <a-box id="remco" position="-4 1.5 -20" rotation="0 -90 0" depth="2" height="2.5" width="0" color="#bbe30a" opacity="0.3" onclick="test" geometry="mergeTo:null"></a-box>
 		
 	  <!--Doos voor Fred van Krimpen-->
       <a-box id="fred" position="0.9 6.4 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.3" geometry="mergeTo:null" ></a-box>	
@@ -45,6 +46,12 @@
 	  <!--Text die verschijnt-->
 	  <a-entity id="teacher_text" bmfont-text="width: 450;" position="-27 0 -19.9" rotation="0 0 0" scale="5 5 5"></a-entity>
 	  
+	  <!--Terug naar de boven aan de trap-->
+	  <a-box id="terug_box" position="-14 1 10" rotation="0 -90 -3" depth="8" height="8" width="0" opacity="0.5"></a-box>
+	  
+	  <!--Text om terug naar de trap te gaan-->
+	  <a-entity id="trap_text" bmfont-text="width: 450; text: Terug naar de trap" position="-8 -5 10" rotation="0 180 0" scale="8 8 8"></a-entity>
+	  
     </a-scene>
     <!-- Einde van de scene -->
   </body>
@@ -53,6 +60,12 @@
 <script type="text/javascript">
 	var text = document.getElementById("teacher_text");
 	var panel_class = document.querySelectorAll('#remco, #fred, #vincent, #patrick');
+	var back = document.getElementById("terug_box");
+	
+	back.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/6.html';
+	});
+	
 	for(var i = 0; i < panel_class.length; i++) {
 		panel_class[i].addEventListener('click', function () {
 			document.getElementById("text_panel").setAttribute('material', 'opacity', '1');	  
