@@ -30,24 +30,63 @@
 
 
 
-      <!--Box Computereiland-->
-      <a-box id="boxReceptie" position="-20 2.5 -8.61" scale="0.1 6 8" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
-        <!-- Tekst Computereiland -->
-        <a-entity id="tekstReceptie" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
-          Het computereiland kan worden gebruikt door studenten om op te werken. Elke student kan met zijn of haar studentnummer en wachtwoord inloggen op deze computers. Deze computers worden gebruikt voor verschillende zaken zoals het werken aan documenten, maar ook kan een student eenvoudig het rooster bekijken of de cijferlijst inkijken."
-        position="16.99 2.16 -9.35" rotation="0 20 0" scale="5 5 5"></a-entity>
+      <!--Box Kantine-->
+      <a-box id="boxKantine" position="-18.67 2.09 -28.15" scale="0.1 6 8" rotation="0 -45" opacity="0.3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!--Tekst Kantine-->
+        <a-entity id="textKantine" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
+          In de kantine van de Hogeschool Leiden kan je eenvoudig en snel ontbijt, lunch en zelfs avondeten halen. De kantine heeft veel in de aanbieding, hieronder een klein voorbeeld van hun assortiment:
+            - Vers fruit
+            - Gekoeld drinken
+            - Frituur
+            - Panini’s en belegde broodjes
+            - Saladebar
+            - Avondeten
+            - Vegetarisch
+            "
+        position="-21.57 -0.93 -24.88" rotation="0 35 0" scale="5 5 5"></a-entity>
+
+
+      <!--Box Receptie-->
+      <a-box id="boxReceptie" position="29.07 0.45 -12.41" scale="0.1 6 8" rotation="0 20" opacity="0.3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!--Tekst Receptie-->
+        <a-entity id="textReceptie" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
+          De receptie wordt vooral gebruikt door bezoekers van de Hogeschool Leiden. Als student kom je hier niet vaak mee in contact, maar als bijvoorbeeld je begeleider van je stagebedrijf naar de Hogeschool wilt komen, dan kan je hier een parkeerplek reserveren voor je gast."
+        position="25.27 -2.25 -14.33" rotation="0 -75 0" scale="5 5 5"></a-entity>
+
+
+      <!--Box Studentzaken-->
+      <a-box id="boxStudentzaken" position="2.49 1.49 37.65" scale="0.1 6 8" rotation="0 80" opacity="0.3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!--Tekst Studentzaken-->
+        <a-entity id="textStudentzaken" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Studentzaken is er voor de student. Elke student kan hier terecht mochten er problemen zijn met zijn of haar inschrijving, studentenkaart of inloggegevens. Ook is hier de HSBookshop te vinden, waar studenten boeken kunnen bestellen."
+        position="6.87 -1.85 37.39" rotation="0 170.00 0" scale="5 5 5"></a-entity>
+
+
+      <!--Uitgang naar buiten (Video 1) -->
+      <a-box id="boxExitVideo1" position="-23.53 1.49 -2.83" scale="0.1 6 8" rotation="0 10" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+              <!--Tekst Studentzaken-->
+        <a-entity id="textExitVideo1" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Terug naar het begin"
+        position="-24.13 -2.65 1.12" rotation="0 95 0" scale="5 5 5"></a-entity>       
+
+      <!--Uitgang naar Rokershok (Video 2) -->
+      <a-box id="boxExitVideo2" position="20.65 1.49 -17.56" scale="0.1 6 8" rotation="0 40" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+              <!--Tekst Studentzaken-->
+        <a-entity id="textExitVideo2" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Ga naar buiten"
+        position="20.12 -2.65 -22.41" rotation="0 -50 0" scale="5 5 5"></a-entity>         
 
 
 
       <!--Box Kantine-->
-      <a-box position="-11.91 2.5 -20" scale="0.1 6 8" rotation="0 -50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!-- <a-box position="-11.91 2.5 -20" scale="0.1 6 8" rotation="0 -50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box> -->
 
       <!--Box Studentzaken-->
-      <a-box position="3.17 1.71 26.20" scale="0.1 6 8" rotation="0 -80" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <!-- <a-box position="3.17 1.71 26.20" scale="0.1 6 8" rotation="0 -80" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box> -->
 
       <!-- Uitgang naar Rokersruimte -->
-      <a-box id="boxReceptie" position="24.97 1.04 -22.69" scale="0.1 7 7" rotation="0 50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
-
+ <!--      <a-box id="boxReceptie" position="24.97 1.04 -22.69" scale="0.1 7 7" rotation="0 50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+ -->
 
 
 
@@ -59,24 +98,37 @@
 
 <script type="text/javascript">
 
+document.querySelector('#boxKantine').addEventListener('click', function () {
+  var text = document.getElementById("textKantine");
+  text.setAttribute('visible', 'true');
+          if(counter == 1){
+            text.setAttribute('visible', 'false');
+        }
+        if(counter > 1){
+          counter = 0
+        }
+        // Kleur van de variabele (text = uitgangText) veranderen naar rood
+        // Daarna veranderen we de text naar "Tot ziens!"
+        // text.setAttribute('bmfont-text', 'color', 'red');
+        // text.setAttribute('bmfont-text', 'text', '');
+        // text.setAttribute('bmfont-text', 'text', 'Tot ziens!');
+        console.log("Counter", counter)
+        counter += 1
+});
+
 document.querySelector('#boxReceptie').addEventListener('click', function () {
   var text = document.getElementById("textReceptie");
   text.setAttribute('visible', 'true');
 });
 
-document.querySelector('#boxComps').addEventListener('click', function () {
-  var text = document.getElementById("textComps");
+document.querySelector('#boxStudentzaken').addEventListener('click', function () {
+  var text = document.getElementById("textStudentzaken");
   text.setAttribute('visible', 'true');
 });
 
-document.querySelector('#boxTrap').addEventListener('click', function () {
-  var text = document.getElementById("textTrap");
-  text.setAttribute('visible', 'true');
-});
-
-document.querySelector('#boxZaal').addEventListener('click', function () {
-  var text = document.getElementById("textZaal");
-  text.setAttribute('visible', 'true');
-});
+// document.querySelector('#boxZaal').addEventListener('click', function () {
+//   var text = document.getElementById("textZaal");
+//   text.setAttribute('visible', 'true');
+// });
 
 </script>
