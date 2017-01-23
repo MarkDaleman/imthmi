@@ -19,7 +19,7 @@
       <a-assets>
         <!--Achtergrond video (1) voor de school-->
         <video id="video1" src="movies/video1.mp4"
-               autoplay loop crossorigin></video>
+                loop crossorigin></video>
       </a-assets>
 
       <a-camera>
@@ -38,34 +38,70 @@
       <!--Scripts voor pauze-->
       <script>
         $( document ).ready(function(){
+          var video =  document.querySelector("#video1");
+          var kaas = true;
+          //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan op pauze wanneer het praten is afgelopen.
+          video.addEventListener("timeupdate", function () {
+              if ($('#video1')[0].currentTime >= 21 && kaas) {
+                $('#video1')[0].pause();
+                kaas = false;
+              }
+              //deze functie laat na het klikken de video ook weer pauzeren wanneer de mannen de school binnnen zijn gelopen
+              if ($('#video1')[0].currentTime >= 34 && !kaas) {
+                  $('#video1')[0].pause();
+                }
+            });
 
-          document.querySelector("#video1").addEventListener("timeupdate", function(){
-            console.log($('#video1')[0].currentTime);
-            if($('#video1')[0].currentTime >= 21 ) {
-              $('#video1')[0].pause();
-            }
+
+          //Deze functies hangen een listener aan de verschillende overlays die over de personen liggen.
+          //wanneer er op een kader wordt gedrukt wordt de video afgespeeld en de desbetreffende video ingeladen en afgespeeld.
+
+          //Noord
+          var textNoord = document.getElementById("textNoord");
+          document.querySelector('#boxNoord').addEventListener('click', function() {
+            console.log("noord ingedrukt");
+            textNoord.setAttribute('bmfont-text','text','Sorry. Werkt niet.');
+          });
+
+          //Oost
+          document.querySelector('#boxOost').addEventListener('click', function() {
+            console.log("oost ingedrukt");
+            $('#video1')[0].play();
+          });
+
+          //Zuid
+          var textZuid = document.getElementById("textZuid");
+          document.querySelector('#boxZuid').addEventListener('click', function() {
+            console.log("zuid ingedrukt");
+            textZuid.setAttribute('bmfont-text','text','Sorry. Werkt niet.');
+          });
+          //West
+          document.querySelector('#boxWest').addEventListener('click', function() {
+            console.log("west ingedrukt");
+            $('#video1')[0].play();
           });
         });
+
       </script>
 
       <!--Doos voor school (noord)-->
-      <a-box id="boxNoord" position="35 0 0" scale="1 15 10"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxNoord" position="35 0 0" scale="1 15 10"material="opacity: 0" geometry="mergeTo:null" ></a-box>
 
       <!--text voor doos noord-->
       <a-entity id="textNoord" bmfont-text="text: Leiden Centraal" position="37 -10 -3" rotation="0 -90 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor fietsen (oost)-->
-      <a-box id="boxOost" position="0 0 -23" scale="10 15 1"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxOost" position="0 0 -23" scale="10 15 1"material="opacity: 0" geometry="mergeTo:null" ></a-box>
       <!--text voor doos oost-->
       <a-entity id="textOost" bmfont-text="text: Achterkant school" position="-5 -10 -25" rotation="0 0 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor uitgang (zuid)-->
-      <a-box id="boxZuid" position="0 0 20" scale="10 15 1"material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxZuid" position="0 0 20" scale="10 15 1"material="opacity: 0" geometry="mergeTo:null" ></a-box>
       <!--text voor doos zuid-->
       <a-entity id="textZuid" bmfont-text="text: Z-Gebouw" position="5 -10 20" rotation="0 180 0" scale="10 10 10"></a-entity>
 
       <!--Doos voor Zgebouw (west)-->
-      <a-box id="boxWest" position="-20 0 0" scale="1 15 10" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxWest" position="-20 0 0" scale="1 15 10" material="opacity: 0" geometry="mergeTo:null" ></a-box>
       <!--text voor doos west-->
       <a-entity id="textWest" material="color:white" bmfont-text="text: Naar binnen" position="-20 -10 5" rotation="0 90 0" scale="10 10 10"></a-entity>
 
