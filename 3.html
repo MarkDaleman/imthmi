@@ -15,7 +15,7 @@
       <a-assets>
         <!--Achtergrond video (1) voor de school-->
         <video id="video3" src="movies/video3.mp4"
-               autoplay loop crossorigin></video>
+               loop crossorigin></video>
       </a-assets>
       <!--Hieronder staat de camera-->
       <a-camera>
@@ -63,20 +63,23 @@
 
 
       <!--Uitgang naar buiten (Video 1) -->
-      <a-box id="boxExitVideo1" position="-23.53 1.49 -2.83" scale="0.1 6 8" rotation="0 10" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxBuitenVoor" position="-23.53 1.49 -2.83" scale="0.1 6 8" rotation="0 10" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
               <!--Tekst Studentzaken-->
-        <a-entity id="textExitVideo1" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
+        <a-entity id="buitenVoorText" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
           Terug naar het begin"
         position="-24.13 -2.65 1.12" rotation="0 95 0" scale="5 5 5"></a-entity>       
 
       <!--Uitgang naar Rokershok (Video 2) -->
-      <a-box id="boxExitVideo2" position="20.65 1.49 -17.56" scale="0.1 6 8" rotation="0 40" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxBuitenAchter" position="20.65 1.49 -17.56" scale="0.1 6 8" rotation="0 40" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
               <!--Tekst Studentzaken-->
-        <a-entity id="textExitVideo2" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
+        <a-entity id="buitenAchterText" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
           Ga naar buiten"
         position="20.12 -2.65 -22.41" rotation="0 -50 0" scale="5 5 5"></a-entity>         
-
-
+		
+		<a-box id="boxTrap" position="3 1.49 -35" scale="0.1 6 4" rotation="0 70 0" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+		<a-entity id="trapText" visible="true" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Ga naar de trap"
+        position="0 -2.65 -35" rotation="0 -20 0" scale="5 5 5"></a-entity>
 
       <!--Box Kantine-->
       <!-- <a-box position="-11.91 2.5 -20" scale="0.1 6 8" rotation="0 -50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box> -->
@@ -97,6 +100,22 @@
 </html>
 
 <script type="text/javascript">
+
+	var naar1 = document.getElementById('boxBuitenVoor');
+	var naar2 = document.getElementById('boxBuitenAchter');
+	var naar4 = document.getElementById('boxTrap');
+	
+	naar1.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/1.html';
+	});
+	
+	naar2.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/2.html';
+	});
+	
+	naar4.addEventListener('click', function () {
+		window.location.href = 'http://localhost/imthmi/4.html';
+	});
 
 document.querySelector('#boxKantine').addEventListener('click', function () {
   var text = document.getElementById("textKantine");
