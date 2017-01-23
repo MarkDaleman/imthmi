@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMTHMI</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <!-- Aframe.io master JS inladen -->
+    <script src="dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+  </head>
+  <body>
+    <!-- Hieronder staat een scene -->
+    <a-scene>
+      <!-- Hieronder staan de voorgedefinieerde attributen-->
+      <a-assets>
+        <!--Achtergrond video (1) voor de school-->
+        <video id="video4" src="movies/video4.mp4"
+               autoplay loop crossorigin></video>
+      </a-assets>
+      <!--Hieronder staat de camera-->
+      <a-camera>
+        <a-cursor>
+
+        </a-cursor>
+      </a-camera>
+
+      <!--Hieronder worden ingeladen attributen geselecteerd-->
+      <a-videosphere src="#video4" rotation="0 180 0"></a-videosphere>
+
+      <!--Box Lift-->
+      <a-box id="boxLift" position="-17.3 -1.16 26.2" scale="0.1 6 8" rotation="0 60" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!-- Tekst Lift -->
+        <a-entity id="textLift" visible="false" bmfont-text="width: 750; color: white; text:
+          De liften zijn achter de rode trap te vinden. De lift brengt je naar de volgende verdiepingen:
+          
+          - Begane Grond
+          - Eerste Verdieping
+          - Tweede Verdieping
+          - Derde Verdieping.
+
+          De lift brengt je naar dezelfde plekken als dat de rode trap dat doet."
+        position="-9 -0.66 28.62" rotation="0 148 0" scale="5 5 5"></a-entity>
+
+
+
+
+      <!--Box Computereiland-->
+      <a-box id="boxComps" position="-20.7 -1.16 19.10" scale="0.1 6 8" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!-- Tekst Computereiland -->
+        <a-entity id="textComps" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Het computereiland kan worden gebruikt door studenten om op te werken. Elke student kan met zijn of haar studentnummer en wachtwoord inloggen op deze computers. Deze computers worden gebruikt voor verschillende zaken zoals het werken aan documenten, maar ook kan een student eenvoudig het rooster bekijken of de cijferlijst inkijken."
+        position="-18.2 -1.39 21.25" rotation="0 120 0" scale="5 5 5"></a-entity>
+
+
+
+
+
+      <!--Box Collegezaal-->
+      <a-box id="boxZaal" position="-24.7 1.49 -14.5" scale="0.1 6 8" rotation="0 -20" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!--Tekst Collegezaal-->
+        <a-entity id="textZaal" visible="false" bmfont-text="width: 750; color: blue; opacity: 1; text:
+          Bij de rode trap zelf zijn twee collegezalen te vinden. Deze worden gebruikt door vrijwel alle studenten van de Hogeschool Leiden, ongeacht de opleiding. Het is dan ook gebruikelijk voor studenten enkele uren per week in de collegezalen te spenderen voor verschillende vakken."
+        position="-21.57 1.77 -10.45" rotation="0 75 0" scale="5 5 5"></a-entity>
+
+
+
+
+
+      <!-- Box Rode Trap-->
+      <a-box id="boxTrap" position="-21.26 -1.59 3.02" scale="0.1 7 7" rotation="0 20" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!-- Tekst Rode Trap-->
+        <a-entity id="textTrap" visible="false" bmfont-text="width: 750; color: red; opacity: 1; text:
+          De rode trap is een centraal punt in het gebouw van de Hogeschool Leiden. Vanaf hier kan vrijwel alle plekken van de Hogeschool worden bereikt. De rode trap brengt je naar de eerste, tweede en derde verdieping."
+        position="-16.8 -0.57 6" rotation="0 110 0" scale="5 5 5"></a-entity>
+
+
+
+
+
+      <!-- Box naar de Hal -->
+      <a-box id="boxTrap" position="39 7 -3" scale="0.1 10 14" rotation="0 0" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+
+
+
+
+
+    </a-scene>
+    <!-- Einde van de scene -->
+  </body>
+</html>
+
+<script type="text/javascript">
+
+document.querySelector('#boxLift').addEventListener('click', function () {
+  var text = document.getElementById("textLift");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxComps').addEventListener('click', function () {
+  var text = document.getElementById("textComps");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxTrap').addEventListener('click', function () {
+  var text = document.getElementById("textTrap");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxZaal').addEventListener('click', function () {
+  var text = document.getElementById("textZaal");
+  text.setAttribute('visible', 'true');
+});
+
+
+
+
+
+
+
+  // this.onclick(window.location.href = "https://www.google.nl")
+
+
+
+
+</script>
+
+
+

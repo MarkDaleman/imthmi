@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IMTHMI</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <!-- Aframe.io master JS inladen -->
+    <script src="dist/aframe-master.js"></script>
+    <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+  </head>
+  <body>
+    <!-- Hieronder staat een scene -->
+    <a-scene>
+      <!-- Hieronder staan de voorgedefinieerde attributen-->
+      <a-assets>
+        <!--Achtergrond video (1) voor de school-->
+        <video id="video3" src="movies/video3.mp4"
+               autoplay loop crossorigin></video>
+      </a-assets>
+      <!--Hieronder staat de camera-->
+      <a-camera>
+        <a-cursor>
+
+        </a-cursor>
+      </a-camera>
+
+      <!--Hieronder worden ingeladen attributen geselecteerd-->
+      <a-videosphere src="#video3" rotation="0 180 0"></a-videosphere>
+
+
+
+
+      <!--Box Computereiland-->
+      <a-box id="boxReceptie" position="-20 2.5 -8.61" scale="0.1 6 8" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+        <!-- Tekst Computereiland -->
+        <a-entity id="tekstReceptie" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
+          Het computereiland kan worden gebruikt door studenten om op te werken. Elke student kan met zijn of haar studentnummer en wachtwoord inloggen op deze computers. Deze computers worden gebruikt voor verschillende zaken zoals het werken aan documenten, maar ook kan een student eenvoudig het rooster bekijken of de cijferlijst inkijken."
+        position="16.99 2.16 -9.35" rotation="0 20 0" scale="5 5 5"></a-entity>
+
+
+
+      <!--Box Kantine-->
+      <a-box position="-11.91 2.5 -20" scale="0.1 6 8" rotation="0 -50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+
+      <!--Box Studentzaken-->
+      <a-box position="3.17 1.71 26.20" scale="0.1 6 8" rotation="0 -80" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+
+      <!-- Uitgang naar Rokersruimte -->
+      <a-box id="boxReceptie" position="24.97 1.04 -22.69" scale="0.1 7 7" rotation="0 50" opacity="0.0" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+
+
+
+
+
+    </a-scene>
+    <!-- Einde van de scene -->
+  </body>
+</html>
+
+<script type="text/javascript">
+
+document.querySelector('#boxReceptie').addEventListener('click', function () {
+  var text = document.getElementById("textReceptie");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxComps').addEventListener('click', function () {
+  var text = document.getElementById("textComps");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxTrap').addEventListener('click', function () {
+  var text = document.getElementById("textTrap");
+  text.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxZaal').addEventListener('click', function () {
+  var text = document.getElementById("textZaal");
+  text.setAttribute('visible', 'true');
+});
+
+</script>
