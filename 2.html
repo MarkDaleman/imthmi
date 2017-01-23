@@ -18,10 +18,8 @@
       <!-- Hieronder staan de voorgedefinieerde attributen-->
       <a-assets>
         <!--Achtergrond video (1) voor de school-->
-
         <video id="video2" src="movies/video2.mp4"
                loop crossorigin></video>
-
       </a-assets>
 
       <!--Hieronder staat de camera-->
@@ -62,6 +60,7 @@
 
       </script>
 
+<<<<<<< HEAD
       <!--Doos voor school (noord)-->
       <a-box id="boxNoord" position="127 36 -44.59" scale="1 15 100" rotation="0 45 0 "  material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
 
@@ -72,21 +71,77 @@
 
       <!--Doos voor uitgang (zuid)-->
       <a-box id="boxZuid" position="38 7 12" scale="10 13 1" rotation ="0 70 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+=======
+      <!--Box voor Techniekruimte-->
+      <a-box id="boxTechniek" position="127 28.72 -44.59" scale="1 30 100" rotation="0 45 0 "  material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-entity id="textTechniek" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
+      In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="37.26 7.84 -31.80" rotation="0 -45 0" scale="10 10 10"></a-entity>
+>>>>>>> b25ee52d4f28f2b5c6d2a388c779cf04d6d0b34b
 
-      <!--Doos voor Zgebouw (west)-->
-      <a-box id="boxWest" position="57.15 16 41" scale="25 35 1" rotation ="0 45 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <!--Box voor Video 1-->
+      <a-box id="boxVideo1" position="-64.01 5.83 -16.07" scale="10 15 1" rotation="0 70 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <!--Text voor Video 1-->
+      <a-entity id="textVideo1" bmfont-text="width: 750; color: white; opacity: 1; text: Terug naar het begin" position="-62.77 -1.83 -5.47" rotation="0 70 0" scale="10 10 10"></a-entity>
 
+      <!--Box voor Gebouw H-->
+      <a-box id="boxH" position="101.80 14.48 28.91" scale="28 31 1" rotation ="0 70 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-entity id="textH" visible='false' bmfont-text="width: 400; color: white; opacity: 1; text:
+      Het H-gebouw heeft twee functies. De onderste verdieping fungeert als collegeruimte voor de studenten van de Hogeschool, als student kan het voorkomen dat je hier regelmatig college moet volgen."
+      position="75.72 0.47 12.42" rotation="0 -115 0" scale="10 10 10"></a-entity>
 
+      <!--Box voor Gebouw J-->
+      <a-box id="boxJ" position="57.15 17.62 41" scale="25 32 1" rotation ="0 40 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+      <a-entity id="textJ" visible='false' bmfont-text="width: 400; color: white; opacity: 1; text:
+      Het H-gebouw heeft twee functies. De onderste verdieping fungeert als collegeruimte voor de studenten van de Hogeschool, als student kan het voorkomen dat je hier regelmatig college moet volgen."
+      position="52 3.78 26.11" rotation="0 -140 0" scale="10 10 10"></a-entity>
 
     </a-scene>
     <!-- Einde van de scene -->
   </body>
 </html>
 
+<<<<<<< HEAD
 <script>
 	var naar1 = document.getElementById('boxOost');
 	
 	naar1.addEventListener('click', function () {
 		window.location.href = 'http://localhost/imthmi/1.html';
 	});
+=======
+<script type="text/javascript">
+
+document.querySelector('#boxTechniek').addEventListener('click', function () {
+  var textTechniek = document.getElementById("textTechniek");
+  textTechniek.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxH').addEventListener('click', function () {
+  var textH = document.getElementById("textH");
+  textH.setAttribute('visible', 'true');
+          if(counter == 1){
+            text.setAttribute('visible', 'false');
+        }
+        if(counter > 1){
+          counter = 0
+        }
+        // Kleur van de variabele (text = uitgangText) veranderen naar rood
+        // Daarna veranderen we de text naar "Tot ziens!"
+        // text.setAttribute('bmfont-text', 'color', 'red');
+        // text.setAttribute('bmfont-text', 'text', '');
+        // text.setAttribute('bmfont-text', 'text', 'Tot ziens!');
+        console.log("Counter", counter)
+        counter += 1
+});
+
+document.querySelector('#boxJ').addEventListener('click', function () {
+  var textJ = document.getElementById("textJ");
+  textJ.setAttribute('visible', 'true');
+});
+
+document.querySelector('#boxVideo1').addEventListener('click', function () {
+  var text = document.getElementById("textVideo1");
+  text.setAttribute('visible', 'true');
+});
+
+>>>>>>> fd692cea1b8234bc8962189b48bf87de41b5d731
 </script>
