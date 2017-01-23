@@ -28,7 +28,7 @@
       <a-videosphere src="#video4" rotation="0 180 0"></a-videosphere>
 
       <!--Box Lift-->
-      <a-box id="boxLift" position="-17.3 -1.16 26.2" scale="0.1 6 8" rotation="0 60" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxLift" position="-17.3 -1.16 26.2" scale="0.1 6 8" rotation="0 60" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
         <!-- Tekst Lift -->
         <a-entity id="textLift" visible="false" bmfont-text="width: 750; color: white; text:
           De liften zijn achter de rode trap te vinden. De lift brengt je naar de volgende verdiepingen:
@@ -45,7 +45,7 @@
 
 
       <!--Box Computereiland-->
-      <a-box id="boxComps" position="-20.7 -1.16 19.10" scale="0.1 6 8" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxComps" position="-20.7 -1.16 19.10" scale="0.1 6 8" rotation="0 30" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
         <!-- Tekst Computereiland -->
         <a-entity id="textComps" visible="false" bmfont-text="width: 750; color: white; opacity: 1; text:
           Het computereiland kan worden gebruikt door studenten om op te werken. Elke student kan met zijn of haar studentnummer en wachtwoord inloggen op deze computers. Deze computers worden gebruikt voor verschillende zaken zoals het werken aan documenten, maar ook kan een student eenvoudig het rooster bekijken of de cijferlijst inkijken."
@@ -56,7 +56,7 @@
 
 
       <!--Box Collegezaal-->
-      <a-box id="boxZaal" position="-24.7 1.49 -14.5" scale="0.1 6 8" rotation="0 -20" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxZaal" position="-24.7 1.49 -14.5" scale="0.1 6 8" rotation="0 -20" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
         <!--Tekst Collegezaal-->
         <a-entity id="textZaal" visible="false" bmfont-text="width: 750; color: blue; opacity: 1; text:
           Bij de rode trap zelf zijn twee collegezalen te vinden. Deze worden gebruikt door vrijwel alle studenten van de Hogeschool Leiden, ongeacht de opleiding. Het is dan ook gebruikelijk voor studenten enkele uren per week in de collegezalen te spenderen voor verschillende vakken."
@@ -67,7 +67,7 @@
 
 
       <!-- Box Rode Trap-->
-      <a-box id="boxTrap" position="-21.26 -1.59 3.02" scale="0.1 7 7" rotation="0 20" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxTrap" position="-21.26 -1.59 3.02" scale="0.1 7 7" rotation="0 20" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
         <!-- Tekst Rode Trap-->
         <a-entity id="textTrap" visible="false" bmfont-text="width: 750; color: red; opacity: 1; text:
           De rode trap is een centraal punt in het gebouw van de Hogeschool Leiden. Vanaf hier kan vrijwel alle plekken van de Hogeschool worden bereikt. De rode trap brengt je naar de eerste, tweede en derde verdieping."
@@ -80,7 +80,7 @@
 
 
       <!-- Box naar de Hal -->
-      <a-box id="boxHal" position="39 7 -3" scale="0.1 10 14" rotation="0 0" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
+      <a-box id="boxHal" position="39 7 -3" scale="0.1 10 14" rotation="0 0" opacity="0.5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
 
 
 		<a-entity id="hal_text" bmfont-text="width: 450; text: Terug naar de hal" position="28 0 -9" rotation="0 -90 0" scale="8 8 8"></a-entity>
@@ -94,6 +94,7 @@
 <script type="text/javascript">
 	var naar3 = document.getElementById('boxHal');
 	var naar6 = document.getElementById('boxNaarBoven');
+	var text;
 	
 	naar3.addEventListener('click', function () {
 		window.location.href = 'http://localhost/imthmi/3.html';
@@ -103,37 +104,41 @@
 		window.location.href = 'http://localhost/imthmi/6.html';
 	});
 
-document.querySelector('#boxLift').addEventListener('click', function () {
-  var text = document.getElementById("textLift");
-  text.setAttribute('visible', 'true');
-});
+	document.querySelector('#boxLift').addEventListener('click', function () {
+	  text = document.getElementById("textLift");
+	  text.setAttribute('visible', 'true');
+	});
 
-document.querySelector('#boxComps').addEventListener('click', function () {
-  var text = document.getElementById("textComps");
-  text.setAttribute('visible', 'true');
-});
+	document.querySelector('#boxComps').addEventListener('click', function () {
+	  text = document.getElementById("textComps");
+	  text.setAttribute('visible', 'true');
+	});
 
-document.querySelector('#boxTrap').addEventListener('click', function () {
-  var text = document.getElementById("textTrap");
-  text.setAttribute('visible', 'true');
-});
+	document.querySelector('#boxTrap').addEventListener('click', function () {
+	  text = document.getElementById("textTrap");
+	  text.setAttribute('visible', 'true');
+	  
+	  if(counter == 1){
+            text.setAttribute('visible', 'false');
+        }
+        if(counter > 1){
+          counter = 0
+        }
+        // Kleur van de variabele (text = uitgangText) veranderen naar rood
+        // Daarna veranderen we de text naar "Tot ziens!"
+        // text.setAttribute('bmfont-text', 'color', 'red');
+        // text.setAttribute('bmfont-text', 'text', '');
+        // text.setAttribute('bmfont-text', 'text', 'Tot ziens!');
+        console.log("Counter", counter)
+        counter += 1
+	});
 
-document.querySelector('#boxZaal').addEventListener('click', function () {
-  var text = document.getElementById("textZaal");
-  text.setAttribute('visible', 'true');
-});
-
-
-
-
-
-
+	document.querySelector('#boxZaal').addEventListener('click', function () {
+	  text = document.getElementById("textZaal");
+	  text.setAttribute('visible', 'true');
+	});
 
   // this.onclick(window.location.href = "https://www.google.nl")
-
-
-
-
 </script>
 
 

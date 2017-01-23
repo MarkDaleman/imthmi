@@ -32,9 +32,9 @@
         <!--Hieronder worden ingeladen attributen geselecteerd-->
         <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
         <!--Box voor de uitgang deur-->
-        <a-box id="boxUitgang" position="13.6 2 16" rotation="0 -50 0" scale="3 3 3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
+        <a-box id="boxUitgang" position="13.4 0 16" rotation="-2 -53 0" scale="0 10 3.5" material="normalScale:{&quot;x&quot;:null}" opacity="0.5" color="grey" geometry="mergeTo:null"></a-box>
         <!--Text voor onder de uitgang box-->
-        <a-entity id="UitgangText" bmfont-text="color: black; text: Terug naar de trap;" position="25 -2 15" rotation="-0.66 -140 0" scale="10 10 10"></a-entity>
+        <a-entity id="UitgangText" bmfont-text="color: black; text: Terug naar de trap;" position="23 -10 15" rotation="-0.66 -140 0" scale="10 10 10"></a-entity>
 
     </a-scene>
     <!-- Einde van de scene -->
@@ -54,7 +54,6 @@
     // De kleur moet rood worden, dus pak je eerst material vast, daarna color en daarna de gewenste kleur
     // Vervolgens hetzelfde bij de Uitgangtext; aanroepen om de kleur van de text te veranderen
     document.querySelector('#boxUitgang').addEventListener('click', function() {
-        this.setAttribute('material', 'color', 'blue');
         // Hieronder koppelen we een variabele aan de uitgangtext ID, omdat het anders niet werkt en JS gaat huilen :'(
         var text = document.getElementById("UitgangText");
         text.setAttribute('visible', 'true');
