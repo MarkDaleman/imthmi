@@ -8,6 +8,8 @@
     <!-- Aframe.io master JS inladen -->
     <script src="dist/aframe-master.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
 </head>
 
 <body>
@@ -16,7 +18,7 @@
         <!-- Hieronder staan de voorgedefinieerde attributen-->
         <a-assets>
             <!--Achtergrond video (8) voor de school-->
-            <video id="video1" src="movies/video8.mp4" loop crossorigin></video>
+            <video id="video8" src="movies/video8.mp4" loop crossorigin></video>
         </a-assets>
         <!--Hieronder staat de camera-->
         <a-camera>
@@ -30,7 +32,26 @@
         </a-camera>
 
         <!--Hieronder worden ingeladen attributen geselecteerd-->
-        <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
+        <a-videosphere src="#video8" rotation="0 180 0"></a-videosphere>
+
+        <!--Scripts voor pauze-->
+        <script>
+            $( document ).ready(function(){
+                var video =  document.querySelector("#video8");
+                var kaas = true;
+                //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
+                video.addEventListener("timeupdate", function () {
+                    if ($('#video8')[0].currentTime >= 33 && kaas) {
+                        console.log(this.currentTime);
+                        this.pause();
+                        this.currentTime = 22;
+                        this.play();
+                    }
+                });
+            });
+
+        </script>
+
         <!--Box voor de uitgang deur-->
         <a-box id="boxUitgang" position="13.4 0 16" rotation="-2 -53 0" scale="0 10 3.5" material="normalScale:{&quot;x&quot;:null}" opacity="0.5" color="grey" geometry="mergeTo:null"></a-box>
         <!--Text voor onder de uitgang box-->
