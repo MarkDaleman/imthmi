@@ -8,6 +8,8 @@
     <!-- Aframe.io master JS inladen -->
     <script src="dist/aframe-master.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
 </head>
 
 <body>
@@ -31,6 +33,24 @@
 
         <!--Hieronder worden ingeladen attributen geselecteerd-->
         <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
+
+        <!--Scripts voor pauze-->
+        <script>
+            $( document ).ready(function(){
+                var video =  document.querySelector("#video1");
+                var kaas = true;
+                //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
+                video.addEventListener("timeupdate", function () {
+                    if ($('#video1')[0].currentTime >= 16 && kaas) {
+                        console.log(this.currentTime);
+                        this.pause();
+                        this.currentTime = 14;
+                        this.play();
+                    }
+                });
+            });
+
+        </script>
 
         <!--Box voor naar Rechts-->
         <a-box id="bRight" position="15 2 -7" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>

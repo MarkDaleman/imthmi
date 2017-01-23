@@ -7,6 +7,8 @@
     <!-- Aframe.io master JS inladen -->
     <script src="dist/aframe-master.js"></script>
     <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script>
   </head>
   <body>
     <!-- Hieronder staat een scene -->
@@ -29,6 +31,25 @@
 
 
 
+      <!--Scripts voor pauze-->
+      <script>
+        $( document ).ready(function(){
+          var video =  document.querySelector("#video3");
+          var kaas = true;
+          //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
+          video.addEventListener("timeupdate", function () {
+            if ($('#video3')[0].currentTime >= 44 && kaas) {
+              console.log(this.currentTime);
+              this.pause();
+              this.currentTime = 23;
+              this.play();
+            }
+
+          });
+
+        });
+
+      </script>
 
       <!--Box Kantine-->
       <a-box id="boxKantine" position="-18.67 2.09 -28.15" scale="0.1 6 8" rotation="0 -45" opacity="0.3" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
