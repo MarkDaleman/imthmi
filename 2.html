@@ -32,40 +32,15 @@
             <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
             <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
         </a-entity>
-        <!--<a-entity id="userBox" visible="false">-->
+        <!--Hieronder staat een a-box die wordt gebruikt om text op weer te geven.-->
             <a-box id="userText" position="6.80 0 -12.80" rotation="0 90 0" scale="0 5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
-            <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+        <!--Hieronder staat het text element wat boven de box komt te staan.    -->
+        <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
-
-        <!--</a-entity>-->
     </a-camera>
 
     <!--Hieronder worden ingeladen attributen geselecteerd-->
     <a-videosphere src="#video2" rotation="0 270 0"></a-videosphere>
-
-    <!--Scripts voor pauze-->
-    <script>
-        $( document ).ready(function(){
-            var video =  document.querySelector("#video2");
-            var kaas = true;
-            //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
-            video.addEventListener("timeupdate", function () {
-                if ($('#video2')[0].currentTime >= 48 && kaas) {
-                    console.log(this.currentTime);
-                    this.pause();
-                    this.currentTime = 30;
-                    this.play();
-                    //kaas = false;
-                }
-
-//            if ($('#video2')[0].currentTime >= 49 && !kaas) {
-//              $('#video2')[0].pause();
-//            }
-            });
-
-        });
-
-    </script>
 
     <!--Box voor Techniekruimte-->
     <a-box id="boxTechniek" position="127 28.72 -44.59" scale="1 30 100" rotation="0 45 0 "  material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
@@ -106,15 +81,34 @@
 </body>
 </html>
 
+<!--Scripts voor het loopen van de video.-->
+<script>
+    $( document ).ready(function(){
+        var video =  document.querySelector("#video2");
+        var kaas = true;
+        //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
+        video.addEventListener("timeupdate", function () {
+            if ($('#video2')[0].currentTime >= 48 && kaas) {
+                console.log(this.currentTime);
+                this.pause();
+                this.currentTime = 30;
+                this.play();
+            }
+        });
+
+    });
+
+</script>
+
+<!--Script wat gaat over het aansturen van de texten in de dozen e.d-->
 <script type="text/javascript">
     //maak de usertextbox onzichtbaar
     document.getElementById('userText').setAttribute('visible', 'false');
+    //variabelen om bij te houden of een doos open is en of er text op te zien is.
     var open = false;
     var showText = 0;
 
-    //maak een listener voor de boxen
-    //als er op de box wordt geklikt
-    //doos 1
+    //maak een listener voor de boxen , best wel duidelijk.
     document.querySelector('#boxTechniek').addEventListener('click', function () {
         if (!open) {
             changeText(1);
@@ -131,7 +125,6 @@
         }
 
     });
-
 
     document.querySelector('#boxH').addEventListener('click', function () {
         if (!open) {
@@ -170,19 +163,19 @@
         var text = document.getElementById("textVideo1");
         text.setAttribute('visible', 'true');
     });
-
+//    Functie voor het openen van dozen.
     function openDoos(){
         var userText = document.getElementById("userText");
         userText.setAttribute('visible', 'true');
         open = true;
     }
-
+//   Functie voor het sluiten van dozen.
     function sluitDoos(){
         var userText = document.getElementById("userText");
         userText.setAttribute('visible', 'false');
         open = false;
     }
-
+// functie die de text aanpast.
     function changeText(doos){
 
         if (doos == 1){
@@ -214,7 +207,7 @@
 
 
     }
-
+// functie die alleen de text weghaalt.
     function doeiText(doos){
         if (doos == 1){
             var textTechniek = document.getElementById("textTechniek");
