@@ -35,7 +35,7 @@
         <!--Hieronder staat een a-box die wordt gebruikt om text op weer te geven.-->
             <a-box id="userText" position="0.02 -2.60 -5.48" rotation="0 90 0" scale="0 2.5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
         <!--Hieronder staat het text element wat boven de box komt te staan.    -->
-        <a-entity id="textTechniek" scale= "1.5 1.5 1.5" position="-3.03 -2.90 -5.24" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
+        <a-entity id="textTechniek" scale= "1.5 1.5 1.5" position="-3.03 -1.90 -5.24" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
 
 	  <a-image id="miniMap" src="minimap/minimap_v2.png" position="-7 -3 -5" scale="2 2 2"></a-image>
@@ -194,7 +194,7 @@
             var textTechniek = document.getElementById("textTechniek");
             var userText = document.getElementById("userText");
             userText.setAttribute('scale','0 2 7');
-            userText.setAttribute('position','0.02 -2.33 -5.53');
+            userText.setAttribute('position','0.02 -1.33 -5.53');
             textTechniek.setAttribute('bmfont-text', 'text', 'In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student.');
             textTechniek.setAttribute('visible', 'true');
             showText = 1;
@@ -203,7 +203,7 @@
         else if(doos == 2){
             var textTechniek = document.getElementById("textTechniek");
             var userText = document.getElementById("userText");
-            userText.setAttribute('position','0.02 -2.16 -5.52');
+            userText.setAttribute('position','0.02 -1.16 -5.52');
             userText.setAttribute('scale','0 2 7');
             textTechniek.setAttribute('bmfont-text', 'text', 'Het H-gebouw heeft twee functies. De onderste verdieping fungeert als collegeruimte voor de studenten van de Hogeschool, als student kan het voorkomen dat je hier regelmatig college moet volgen.');
             textTechniek.setAttribute('visible', 'true');
@@ -213,7 +213,7 @@
         else if(doos ==3){
             var textTechniek = document.getElementById("textTechniek");
             var userText = document.getElementById("userText");
-            userText.setAttribute('position','0.02 -2.16 -5.52');
+            userText.setAttribute('position','0.02 -1.16 -5.52');
             userText.setAttribute('scale','0 2 7');
             textTechniek.setAttribute('bmfont-text', 'text', 'Het J-gebouw heeft twee functies. De onderste verdieping fungeert als collegeruimte voor de studenten van de Hogeschool, als student kan het voorkomen dat je hier regelmatig college moet volgen.');
             textTechniek.setAttribute('visible', 'true');
