@@ -20,40 +20,32 @@
         </a-assets>
         <!--Hieronder staat de camera-->
         <a-camera>
-          <!-- Hieronder zorgen wij er voor dat je met de cursor elementen kan selecteren -->
-          <!-- LET OP -->
-          <!-- Het element moet niet dichterbij zijn geplaatst dan de ring, anders gaat de ring er voor langs en werkt het niet -->
+            <!-- Hieronder zorgen wij er voor dat je met de cursor elementen kan selecteren -->
+            <!-- LET OP -->
+            <!-- Het element moet niet dichterbij zijn geplaatst dan de ring, anders gaat de ring er voor langs en werkt het niet -->
             <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500" position="0 0 -15" geometry="primitive: ring" material="color: white; shader: flat">
                 <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
                 <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
             </a-entity>
-        </a-camera>
+            <a-box id="boxText" visible='false' position="6.80 0 -12.80" rotation="0 90 0" scale="0 5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
+            <a-entity id="textRechts" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+      Aan de rechterkant kan je enkele lokalen vinden. Hier is ook informatie over alle docenten te vinden en over de vakken die deze docenten geven." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
 
+                <a-entity id="textLinks" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+Links is een groot deel van de lokalen van de derde verdieping te vinden. Vanaf hier kan je ook gemakkelijk de docentenkamers van Informatica bereiken. Veel van de lokalen waar de normale lessen van Informatica worden gegeven zijn hier dan ook te vinden, waaronder ook het lokaal G3.130 waar veel Informaticastudenten zich bevinden wanneer ze even geen college hebben."
+                    position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
+        </a-camera>
         <!--Hieronder worden ingeladen attributen geselecteerd-->
         <a-videosphere src="#video1" rotation="0 180 0"></a-videosphere>
-
         <!--Box voor naar Rechts-->
         <a-box id="bRight" position="15 2 -7" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
         <a-entity id="tRight" bmfont-text="text: Naar rechts" position="12 -0.5 -10" rotation="1 -60 0" scale="6 6 6"></a-entity>
-        <!--Extra informatie-->
-             <a-box id="boxRechts" position="50 4 4" scale="0.1 8 35" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
-               <a-entity id="uitlegRechts" visible="true" bmfont-text="width: 750; color: black; opacity: 1; text:
-               Aan de rechterkant kan je enkele lokalen vinden. Hier is ook informatie over alle docenten te vinden en over de vakken die deze docenten geven."
-       position="29 1 -7" rotation="-2 -70 0" scale="5 5 5"></a-entity>
-
-
         <!--Box voor naar boven rode trap-->
         <a-box id="bDown" position="11 -4 17" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
         <a-entity id="tDown" bmfont-text="text: Naar beneden" position="13 -6 14" rotation="0 212 0" scale="6 6 6"></a-entity>
-
         <!--Box voor Links (west)-->
         <a-box id="bLeft" position="-17 1.5 5" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null"></a-box>
         <a-entity id="tLeft" bmfont-text="text: Naar links" position="-13 0 8" rotation="0 107 0" scale="6 6 6"></a-entity>
-        <!--Extra informatie-->
-             <a-box id="boxLinks" position="-38 7 38" scale="0.1 20 30" rotation="0 30" opacity="1" material="normalScale:{&quot;x&quot;:null}" geometry="mergeTo:null" ></a-box>
-               <a-entity id="uitlegLinks" visible="true" bmfont-text="width: 750; color: black; opacity: 1; text:
-              Links is een groot deel van de lokalen van de derde verdieping te vinden. Vanaf hier kan je ook gemakkelijk de docentenkamers van Informatica bereiken. Veel van de lokalen waar de normale lessen van Informatica worden gegeven zijn hier dan ook te vinden, waaronder ook het lokaal G3.130 waar veel Informaticastudenten zich bevinden wanneer ze even geen college hebben."
-       position="-23 1 38" rotation="-2 120 0" scale="6 6 6"></a-entity>
 
     </a-scene>
     <!-- Einde van de scene -->
@@ -73,5 +65,41 @@
     });
     document.querySelector('#bDown').addEventListener('click', function() {
         this.setAttribute('material', 'color', 'purple');
+    });
+
+
+    var counter = 0
+    var counter1 = 0
+    var textLinks = document.getElementById("textLinks");
+    var textBox = document.getElementById("boxText");
+    var textRechts = document.getElementById("textRechts");
+
+    document.querySelector('#bRight').addEventListener('click', function() {
+        textLinks.setAttribute('visible', 'false');
+        textRechts.setAttribute('visible', 'true');
+        textBox.setAttribute('visible', 'true');
+        if (counter == 1) {
+            textRechts.setAttribute('visible', 'false');
+            textBox.setAttribute('visible', 'false');
+        }
+        if (counter > 1) {
+            counter = 0
+        }
+        console.log("Counter nummer 0:", counter)
+        counter += 1
+    });
+    document.querySelector('#bLeft').addEventListener('click', function() {
+        textRechts.setAttribute('visible', 'false');
+        textLinks.setAttribute('visible', 'true');
+        textBox.setAttribute('visible', 'true');
+        if (counter1 == 1) {
+            textLinks.setAttribute('visible', 'false');
+            textBox.setAttribute('visible', 'false');
+        }
+        if (counter1 > 1) {
+            counter1 = 0
+        }
+        console.log("Counter nummer 1:", counter1)
+        counter1 += 1
     });
 </script>
