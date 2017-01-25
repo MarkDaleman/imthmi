@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17ad0484-3837-4396-9970-5933445e7605" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/4.html" afterPath="$PROJECT_DIR$/4.html" />
-    </list>
+    <list default="true" id="17ad0484-3837-4396-9970-5933445e7605" name="Default" comment="" />
     <ignored path="imthmi.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -43,8 +40,8 @@
           <file leaf-file-name="4.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/4.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="703">
-                  <caret line="223" column="62" selection-start-line="223" selection-start-column="62" selection-end-line="223" selection-end-column="62" />
+                <state relative-caret-position="285">
+                  <caret line="225" column="65" selection-start-line="225" selection-start-column="61" selection-end-line="225" selection-end-column="65" />
                   <folding />
                 </state>
               </provider>
@@ -79,8 +76,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="27" />
+    <option name="y" value="23" />
+    <option name="width" value="1253" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -116,7 +115,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -188,15 +186,15 @@
       <workItem from="1485174613148" duration="7000" />
       <workItem from="1485184384258" duration="289000" />
       <workItem from="1485187193683" duration="9229000" />
-      <workItem from="1485348337442" duration="2425000" />
+      <workItem from="1485348337442" duration="3418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33359000" />
+    <option name="totallyTimeSpent" value="34352000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="27" y="23" width="1253" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2490024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -258,7 +256,7 @@
         <state relative-caret-position="1155">
           <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -328,7 +326,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -374,7 +372,7 @@
         <state relative-caret-position="1005">
           <caret line="67" column="7" selection-start-line="65" selection-start-column="4" selection-end-line="67" selection-end-column="7" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -420,7 +418,7 @@
         <state relative-caret-position="1005">
           <caret line="67" column="7" selection-start-line="65" selection-start-column="4" selection-end-line="67" selection-end-column="7" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -466,7 +464,7 @@
         <state relative-caret-position="1005">
           <caret line="67" column="7" selection-start-line="65" selection-start-column="4" selection-end-line="67" selection-end-column="7" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -494,7 +492,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -515,7 +513,7 @@
         <state relative-caret-position="825">
           <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
           <folding>
-            <marker date="1485348405000" expanded="true" signature="5670:5671" ph="{...}" />
+            <marker date="1485351189000" expanded="true" signature="4168:4169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -574,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="223" column="62" selection-start-line="223" selection-start-column="62" selection-end-line="223" selection-end-column="62" />
+        <state relative-caret-position="285">
+          <caret line="225" column="65" selection-start-line="225" selection-start-column="61" selection-end-line="225" selection-end-column="65" />
           <folding />
         </state>
       </provider>
