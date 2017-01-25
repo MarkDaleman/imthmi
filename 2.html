@@ -20,7 +20,7 @@
     <a-assets>
         <!--Achtergrond video (1) voor de school-->
         <video id="video2" src="movies/video2.mp4"
-               autoplay loop crossorigin></video>
+               loop crossorigin></video>
     </a-assets>
 
     <!--Hieronder staat de camera-->
@@ -37,6 +37,8 @@
         <!--Hieronder staat het text element wat boven de box komt te staan.    -->
         <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
+	  
+	  <a-image id="miniMap" src="minimap/minimap_v2.png" position="-7 -3 -5" scale="2 2 2"></a-image>
     </a-camera>
 
     <!--Hieronder worden ingeladen attributen geselecteerd-->
@@ -65,9 +67,9 @@
       <a-entity id="textVideo1" bmfont-text="width: 750; color: white; opacity: 1; text: Terug naar het begin" position="-62.77 -1.83 -5.47" rotation="0 70 0" scale="10 10 10"></a-entity>
 	  
 	  <!--Box voor Video 3-->
-	  <a-box id="boxVideo3" position="-1 0 -16.07" scale="2 1 0" rotation="0 0 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
+	  <a-box id="boxVideo3" position="-3 2 -16.07" scale="3 1.5 0" rotation="0 -20 0" material="opacity: 0.5" geometry="mergeTo:null" ></a-box>
 	  <!--Text voor Video 3-->
-      <a-entity id="textVideo3" bmfont-text="width: 750; color: white; opacity: 1; text: Naar de hal" position="-30.77 -1.83 -5.47" rotation="0 70 0" scale="10 10 10"></a-entity>
+      <a-entity id="textVideo3" bmfont-text="width: 750; color: white; opacity: 1; text: Naar de hal" position="-4.4 0.75 -16.07" rotation="0 -20 0" scale="3 3 3"></a-entity>
 		
 		
       <!--Box voor Gebouw H-->
@@ -107,6 +109,16 @@
     //variabelen om bij te houden of een doos open is en of er text op te zien is.
     var open = false;
     var showText = 0;
+	var naar1 = document.getElementById('boxVideo1');
+	var naar3 = document.getElementById('boxVideo3');
+	
+	naar1.addEventListener('click', function() {
+		window.location.href = 'http://localhost/imthmi/1.html';
+	});
+	
+	naar3.addEventListener('click', function() {
+		window.location.href = 'http://localhost/imthmi/3.html';
+	});
 
     //maak een listener voor de boxen , best wel duidelijk.
     document.querySelector('#boxTechniek').addEventListener('click', function () {
