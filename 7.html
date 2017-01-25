@@ -20,13 +20,22 @@
         <video id="video7" src="movies/video7.mp4"
                loop crossorigin></video>
       </a-assets>
-      <!--Hieronder staat de camera-->
-      <a-camera>
-            <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500" position="0 0 -15" geometry="primitive: ring" material="color: white; shader: flat">
-                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-                <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
-            </a-entity>
-      </a-camera>
+
+          <!--Hieronder staat de camera-->
+          <a-camera>
+              <!-- Hieronder zorgen wij er voor dat je met de cursor elementen kan selecteren -->
+              <!-- LET OP -->
+              <!-- Het element moet niet dichterbij zijn geplaatst dan de ring, anders gaat de ring er voor langs en werkt het niet -->
+              <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500" position="0 0 -15" geometry="primitive: ring" material="color: white; shader: flat">
+                  <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+                  <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+              </a-entity>
+              <!--Hieronder staat een a-box die wordt gebruikt om text op weer te geven.-->
+                  <a-box id="userText" position="6.80 0 -12.80" rotation="0 90 0" scale="0 5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
+              <!--Hieronder staat het text element wat boven de box komt te staan.    -->
+              <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+            In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
+          </a-camera>
 
       <!--Hieronder worden ingeladen attributen geselecteerd-->
       <a-videosphere src="#video7" rotation="0 90 0"></a-videosphere>
@@ -39,7 +48,6 @@
           //Deze functie blijft aan de video vragen hoe ver hij is en zet hem dan in een loop voor de laatste 20 seconden.
           video.addEventListener("timeupdate", function () {
             if ($('#video7')[0].currentTime >= 17 && kaas) {
-              console.log(this.currentTime);
               this.pause();
               this.currentTime = 15;
               this.play();
@@ -50,62 +58,194 @@
       </script>
 
       <!--Doos voor Remco Meisner-->
-      <a-box id="remco" position="-4 1.5 -20" rotation="0 -90 0" depth="2" height="2.5" width="0" color="green" opacity="0.5" onclick="test" geometry="mergeTo:null"></a-box>
-		
+      <a-box id="remco" position="-4 1.5 -20" rotation="0 -90 0" depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null"></a-box>
+
 	  <!--Doos voor Fred van Krimpen-->
-      <a-box id="fred" position="0.9 6.4 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>	
-	  
+      <a-box id="fred" position="0.9 6.4 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
+
 	  <!--Doos voor Vincent Bakker-->
       <a-box id="vincent" position="-6.2 9 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
-	  
+
 	  <!--Doos voor Patrick Pijnenburg-->
       <a-box id="patrick" position="5.8 11 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
-	  
+
 	  <!--Paneel waarop informatie verschijnt-->
 	  <a-box id="text_panel" position="-22 6 -20" rotation = "0 -90 0" depth="12.5" height="15" width="0" opacity="0" geometry="mergeTo:null" ></a-box>
-	  
+
 	  <!--Text die verschijnt-->
 	  <a-entity id="teacher_text" bmfont-text="width: 450;" position="-27 0 -19.9" rotation="0 0 0" scale="5 5 5"></a-entity>
-	  
+
 	  <!--Terug naar de boven aan de trap-->
 	  <a-box id="terug_box" position="-14 1 10" rotation="0 -90 -3" depth="8" height="8" width="0" opacity="0.5"></a-box>
-	  
+
 	  <!--Text om terug naar de trap te gaan-->
 	  <a-entity id="trap_text" bmfont-text="width: 450; text: Terug naar de trap" position="-8 -5 10" rotation="0 180 0" scale="8 8 8"></a-entity>
-	  
+
     </a-scene>
     <!-- Einde van de scene -->
   </body>
 </html>
 
 <script type="text/javascript">
-	var text = document.getElementById("teacher_text");
-	var panel_class = document.querySelectorAll('#remco, #fred, #vincent, #patrick');
-	var naar6 = document.getElementById("terug_box");
-	
+
+  var naar6 = document.getElementById('terug_box');
 	naar6.addEventListener('click', function () {
 		window.location.href = 'http://localhost/imthmi/6.html';
 	});
-	
-	for(var i = 0; i < panel_class.length; i++) {
-		panel_class[i].addEventListener('click', function () {
-			document.getElementById("text_panel").setAttribute('material', 'opacity', '1');	  
-			text.setAttribute('bmfont-text', 'opacity', '1');
-			
-			if (document.getElementById("remco") == this) {
-				text.setAttribute('bmfont-text', 'text', 'Remco is een van de docenten van de specialisatie Business Data Management. Veel van de vakken die hij geeft zijn gefocust op management, en weet dit altijd met een hoop humor uit te leggen. Mocht je van droge humor houden, dan is hij een van de leukere leraren die er rondloopt!');
-				console.log("Remco!")
-			} else if (document.getElementById("fred") == this) {
-				text.setAttribute('bmfont-text', 'text', 'Fred is de onderwijsassistent van de specialisatie Mediatechnologie. Hij heeft verstand van allerlei zaken zoals hard- en software. Mocht je dus elektronische apparatuur of advies hierover nodig hebben, dan weet hij je vast te helpen!');
-				console.log("Fred!")
-			} else if (document.getElementById("vincent") == this) {
-				text.setAttribute('bmfont-text', 'text', 'Vincent is de opleidingsmanager van de studie Informatica. Hij was oorspronkelijk de specialisatie coördinator van de specialisatie Mediatechnologie. Onderhand regelt hij de invulling van de hele studie. Mocht je dus algemene vragen over de opleiding hebben kan hij je verder helpen!');
-				console.log("Vincent!")
-			} else if (document.getElementById("patrick") == this) {
-				text.setAttribute('bmfont-text', 'text', 'Patrick is de directeur van het cluster Techniek. Met hem zul je niet veel te maken krijgen, omdat hij als directeur weinig in contact staat met studenten. Mocht je hem echter tegenkomen en een gesprek willen aangaan, dan staat hij hier altijd voor open!');
-				console.log("Patrick!")
-			}
-			
-		});
-	}
+
+      // COPY VAN DE MASTER VOOR DE JUISTE BOXEN
+      //maak de usertextbox onzichtbaar
+      document.getElementById('userText').setAttribute('visible', 'false');
+      //variabelen om bij te houden of een doos open is en of er text op te zien is.
+      var open = false;
+      var showText = 0;
+
+      var remco123 = document.getElementById('remco');
+      remco123.addEventListener('click', function () {
+          if (!open) {
+              changeText(1);
+              openDoos();
+          }
+
+          else if(open && showText != 1){
+              changeText(1);
+          }
+
+          else if(open){
+              doeiText(1);
+              sluitDoos();
+          }
+      });
+      var patrick123 = document.getElementById('patrick');
+      patrick123.addEventListener('click', function () {
+          if (!open) {
+              changeText(2);
+              openDoos();
+          }
+
+          else if(open && showText != 2){
+              changeText(2);
+          }
+
+          else if(open){
+              doeiText(2);
+              sluitDoos();
+          }
+      });
+      var vincent123 = document.getElementById('vincent');
+      vincent123.addEventListener('click', function () {
+          if (!open) {
+              changeText(3);
+              openDoos();
+          }
+
+          else if(open && showText != 3){
+              changeText(3);
+          }
+
+          else if(open){
+              doeiText(3);
+              sluitDoos();
+          }
+      });
+      var fred123 = document.getElementById('fred');
+      fred123.addEventListener('click', function () {
+          if (!open) {
+              changeText(4);
+              openDoos();
+          }
+
+          else if(open && showText != 4){
+              changeText(4);
+          }
+
+          else if(open){
+              doeiText(4);
+              sluitDoos();
+          }
+      });
+
+
+  //    Functie voor het openen van dozen.
+      function openDoos(){
+          var userText = document.getElementById("userText");
+          userText.setAttribute('visible', 'true');
+          open = true;
+      }
+  //   Functie voor het sluiten van dozen.
+      function sluitDoos(){
+          var userText = document.getElementById("userText");
+          userText.setAttribute('visible', 'false');
+          open = false;
+      }
+  // functie die de text aanpast.
+  // position="-4 1.5 -20"
+  //<a-box id="fred" position="0.9 6.4 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
+
+//<!--Doos voor Vincent Bakker-->
+//  <a-box id="vincent" position="-6.2 9 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
+
+//<!--Doos voor Patrick Pijnenburg-->
+//  <a-box id="patrick" position="5.8 11 -20" rotation = "0 -90 0"depth="2" height="2.5" width="0" color="green" opacity="0.5" geometry="mergeTo:null" ></a-box>
+  //
+  //
+
+      function changeText(doos){ // REMCO
+          if (doos == 1){
+              var textTechniek = document.getElementById("textTechniek");
+              var userText = document.getElementById("userText");
+              userText.setAttribute('scale','0 7 10');
+              userText.setAttribute('position', '7 1 -13')
+              textTechniek.setAttribute('bmfont-text', 'text', 'Remco is een van de docenten van de specialisatie Business Data Management. Veel van de vakken die hij geeft zijn gefocust op management, en weet dit altijd met een hoop humor uit te leggen. Mocht je van droge humor houden, dan is hij een van de leukere leraren die er rondloopt!');
+              textTechniek.setAttribute('visible', 'true');
+              showText = 1;
+          }
+          else if(doos == 2){ // PATRICK
+              var textTechniek = document.getElementById("textTechniek");
+              var userText = document.getElementById("userText");
+              userText.setAttribute('scale','0 6 10');
+
+              textTechniek.setAttribute('bmfont-text', 'text', 'Patrick is de directeur van het cluster Techniek. Met hem zul je niet veel te maken krijgen, omdat hij als directeur weinig in contact staat met studenten. Mocht je hem echter tegenkomen en een gesprek willen aangaan, dan staat hij hier altijd voor open!');
+              textTechniek.setAttribute('visible', 'true');
+              showText = 2;
+          }
+          else if(doos ==3){ // VINCENT
+              var textTechniek = document.getElementById("textTechniek");
+              var userText = document.getElementById("userText");
+              userText.setAttribute('scale','0 6 10');
+
+              textTechniek.setAttribute('bmfont-text', 'text', 'Vincent is de opleidingsmanager van de studie Informatica. Hij was oorspronkelijk de specialisatie coördinator van de specialisatie Mediatechnologie. Onderhand regelt hij de invulling van de hele studie. Mocht je dus algemene vragen over de opleiding hebben kan hij je verder helpen!');
+              textTechniek.setAttribute('visible', 'true');
+              showText = 3;
+          }
+          else if(doos ==4){ // FRED
+              var textTechniek = document.getElementById("textTechniek");
+              var userText = document.getElementById("userText");
+              userText.setAttribute('scale','0 6 10');
+
+              textTechniek.setAttribute('bmfont-text', 'text', 'Fred is de onderwijsassistent van de specialisatie Mediatechnologie. Hij heeft verstand van allerlei zaken zoals hard- en software. Mocht je dus elektronische apparatuur of advies hierover nodig hebben, dan weet hij je vast te helpen!');
+              textTechniek.setAttribute('visible', 'true');
+              showText = 4;
+          }
+      }
+  // functie die alleen de text weghaalt.
+      function doeiText(doos){
+          if (doos == 1){
+              var textTechniek = document.getElementById("textTechniek");
+              textTechniek.setAttribute('visible', 'false');
+          }
+          else if(doos == 2){
+              var textTechniek = document.getElementById("textTechniek");
+              textTechniek.setAttribute('visible', 'false');
+          }
+          else if(doos ==3){
+              var textTechniek = document.getElementById("textTechniek");
+              textTechniek.setAttribute('visible', 'false');
+          }
+          else if(doos ==4){
+              var textTechniek = document.getElementById("textTechniek");
+              textTechniek.setAttribute('visible', 'false');
+          }
+		};
+
 </script>
