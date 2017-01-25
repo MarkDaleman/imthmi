@@ -33,7 +33,7 @@
             <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
         </a-entity>
         <!--Hieronder staat een a-box die wordt gebruikt om text op weer te geven.-->
-            <a-box id="userText" position="0.02 -1.33 -5.53" rotation="0 90 0" scale="0 1.5 5.30" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
+            <a-box id="userText" position="0.02 -1.33 -25.53" rotation="0 90 0" scale="0 1.5 5.30" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
         <!--Hieronder staat het text element wat boven de box komt te staan.    -->
         <a-entity id="textTechniek" scale= "1 1 1" position="-1.8 -1.8 -8" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
@@ -194,7 +194,7 @@
             var textTechniek = document.getElementById("textTechniek");
             var userText = document.getElementById("userText");
             userText.setAttribute('scale','0 1.5 5.3');
-            userText.setAttribute('position','0.02 -1.33 -5.53');
+            userText.setAttribute('position','0.02 -1.33 -25.53');
             textTechniek.setAttribute('bmfont-text', 'text', 'In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student.');
             textTechniek.setAttribute('visible', 'true');
             showText = 1;
