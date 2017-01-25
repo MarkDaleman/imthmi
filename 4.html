@@ -26,9 +26,9 @@
                 <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
             </a-entity>
         <a-box id="userText" position="6.80 0 -12.80" rotation="0 90 0" scale="0 5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
-        <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+        <a-entity id="textTechniek" scale= "1.5 1.5 1.5" position="-2.58 -1.99 -7.75" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
-			<a-image id="miniMap" src="minimap/minimap_v4.png" position="-7 -3 -5" scale="2 2 2"></a-image>
+        <a-image id="miniMap" src="minimap/minimap_v4.png" position="-7 -3 -5" scale="2 2 2"></a-image>
       </a-camera>
 
       <!--Hieronder worden ingeladen attributen geselecteerd-->
@@ -184,7 +184,7 @@
 
     function openDoos(){
       var userText = document.getElementById("userText");
-      userText.setAttribute('visible', 'true');
+      userText.setAttribute('visible', 'false');
       open = true;
     }
 
@@ -200,8 +200,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 5 10');
-        textTechniek.setAttribute('position','2.30 -2.10 -12.21');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.30 -2.10 -12.21');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', "De liften op de hogeschool zijn bedoeld voor mensen die slecht ter been zijn en voor het personeel van de school die met grote spullen aan de haal zijn. Er wordt geen probleem gemaakt van studenten die de lift pakken, maar onthoud wie er voorrang heeft!");
         textTechniek.setAttribute('visible', 'true');
         showText = 1;
@@ -211,8 +211,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 6.5 10');
-        textTechniek.setAttribute('position','2.3 -2.73 -12.10');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.3 -2.73 -12.10');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', 'Het computereiland kan worden gebruikt door studenten om op te werken. Elke student kan met zijn of haar studentnummer en wachtwoord inloggen op deze computers. Deze computers worden gebruikt voor verschillende zaken zoals het werken aan documenten, maar ook kan een student eenvoudig het rooster bekijken of de cijferlijst inkijken.');
         textTechniek.setAttribute('visible', 'true');
         showText = 2;
@@ -222,8 +222,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 4.5 9.8');
-        textTechniek.setAttribute('position','2.3 -1.86 -11.71');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.3 -1.86 -11.71');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', 'De rode trap is een centraal punt in het gebouw van de Hogeschool Leiden. Vanaf hier kan vrijwel alle plekken van de Hogeschool worden bereikt. De rode trap brengt je naar de eerste, tweede en derde verdieping.');
         textTechniek.setAttribute('visible', 'true');
         showText = 3;
@@ -232,8 +232,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 5.5 9.8');
-        textTechniek.setAttribute('position','2.3 -2.29 -12.04');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.3 -2.29 -12.04');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', 'Bij de rode trap zelf zijn twee collegezalen te vinden. Deze worden gebruikt door vrijwel alle studenten van de Hogeschool Leiden, ongeacht de opleiding. Het is dan ook gebruikelijk voor studenten enkele uren per week in de collegezalen te spenderen voor verschillende vakken.');
         textTechniek.setAttribute('visible', 'true');
         showText = 4;
