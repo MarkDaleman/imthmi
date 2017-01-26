@@ -26,10 +26,10 @@
                 <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
             </a-entity>
         <a-box id="userText" position="6.80 0 -12.80" rotation="0 90 0" scale="0 5 10" opacity="0.3" color="grey" geometry="mergeTo:null"></a-box>
-        <a-entity id="textTechniek" visible='false' bmfont-text="width: 600; color: white; opacity: 1; text:
+        <a-entity id="textTechniek" scale= "1.5 1.5 1.5" position="-2.58 -1.99 -7.75" visible='false' bmfont-text="width: 800; color: white; opacity: 1; text:
       In dit lokaal vinden de meeste lessen voor de specialities plaats. Vanaf het tweede jaar, maar ook in het eerste jaar zul je hier vaak te vinden zijn als student." position="2 -1 -12.63" rotation="0 0 0" scale="3 3 3"></a-entity>
 
-	  <a-image id="miniMap" src="minimap/minimap_v3.png" position="-7 -3 -5" scale="2 2 2"></a-image>
+        <a-image id="miniMap" src="minimap/minimap_v3.png" position="-7 -3 -5" scale="2 2 2"></a-image>
 
       </a-camera>
 
@@ -221,7 +221,7 @@
 
     function openDoos(){
       var userText = document.getElementById("userText");
-      userText.setAttribute('visible', 'true');
+      userText.setAttribute('visible', 'false');
       open = true;
     }
 
@@ -237,8 +237,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 4 10');
-        textTechniek.setAttribute('position','2.30 -1.44 -11.76');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.30 -1.44 -11.76');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', "In de kantine van de Hogeschool Leiden kan je eenvoudig en snel ontbijt, lunch en zelfs avondeten halen. De kantine heeft veel in de aanbieding, zoals broodjes, warm en heerlijke soepen.");
         textTechniek.setAttribute('visible', 'true');
         showText = 1;
@@ -248,8 +248,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 5 10');
-        textTechniek.setAttribute('position','2.3 -2.11 -12');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.3 -2.11 -12');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', 'Studentzaken is er voor de student. Elke student kan hier terecht mochten er problemen zijn met zijn of haar inschrijving, studentenkaart of inloggegevens. Ook is hier de HSBookshop te vinden, waar studenten boeken kunnen bestellen.');
         textTechniek.setAttribute('visible', 'true');
         showText = 2;
@@ -259,8 +259,8 @@
         var textTechniek = document.getElementById("textTechniek");
         var userText = document.getElementById("userText");
         userText.setAttribute('scale','0 5.5 9.8');
-        textTechniek.setAttribute('position','2.3 -2.11 -12');
-        textTechniek.setAttribute('scale','2.75 2.5 2.75');
+//        textTechniek.setAttribute('position','2.3 -2.11 -12');
+//        textTechniek.setAttribute('scale','2.75 2.5 2.75');
         textTechniek.setAttribute('bmfont-text', 'text', 'De receptie wordt vooral gebruikt door bezoekers van de Hogeschool Leiden. Als student kom je hier niet vaak mee in contact, maar als bijvoorbeeld je begeleider van je stagebedrijf naar de Hogeschool wilt komen, dan kan je hier een parkeerplek reserveren voor je gast.');
         textTechniek.setAttribute('visible', 'true');
         showText = 3;
